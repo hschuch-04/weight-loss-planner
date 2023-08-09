@@ -3,3 +3,6 @@ include: package:flutter_lints/flutter.yaml
 linter:
   rules:
     prefer_const_constructors: false
+    prefer_final_fields: false
+    avoid_unnecessary_containers: false
+    avoid_print: false
