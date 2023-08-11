@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:weight_loss_planner/About/about.dart';
 import 'package:weight_loss_planner/Calculator/calculator.dart';
 import 'package:weight_loss_planner/sidebar.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  
   runApp(MaterialApp(
     initialRoute: '/planner',
     routes: {

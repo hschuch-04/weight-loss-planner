@@ -26,3 +26,21 @@ class BasalMetabolicRate {
     return 9.247 * weight + 3.098 * height - 4.33 * age + 447.593;
   }
 }
+
+/// Class which holds list infomration for creating widgets
+class ListInformation {
+  static List<Map<String, String>> formdropdown = [
+    { 'value': 'Sedentary: little or no exercise', 'key': 'Sedentary'},
+    { 'value': 'Light: exercise 1-3 times/week', 'key': 'Light'},
+    { 'value': 'Moderate: exercise 4-5 times/week', 'key': 'Moderate'},
+    { 'value': 'Active: daily exercise or intense exercise 3-4 times/week', 'key': 'Active'},
+    { 'value': 'Very Active: intense exercise 6-7 times/week', 'key': 'Very'},
+    { 'value': 'Extra Active: very intense exercise daily, or physical job', 'key': 'Extra'},
+  ];
+  static List<String> formname = ['weight', 'height', 'age'];
+  static List<String> formtext = [
+    'Enter your weight',
+    'Enter your height (cm)',
+    'Enter your age'
+  ];
+}
