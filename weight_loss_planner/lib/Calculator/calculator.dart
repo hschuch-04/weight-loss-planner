@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:weight_loss_planner/Calculator/bmr_calculator.dart';
-import 'package:weight_loss_planner/Calculator/result.dart';
+import 'package:weight_loss_planner/Calculator/bmr.dart';
+import 'package:weight_loss_planner/Calculator/Result/result.dart';
 import 'package:weight_loss_planner/sidebar.dart';
 
 // The Calculator Class Page
@@ -18,11 +18,15 @@ class Calculator extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => Result(
-                  weight: int.parse(_formkey.currentState?.value['weight']),
-                  height: int.parse(_formkey.currentState?.value['height']),
-                  age: int.parse(_formkey.currentState?.value['age']),
+                  bmr: BasalMetabolicRate(
+                    int.parse(_formkey.currentState?.value['weight']), 
+                    int.parse(_formkey.currentState?.value['height']), 
+                    int.parse(_formkey.currentState?.value['age']),
+                    ListInformation.activityValue(_formkey.currentState?.value['activity'])
+                  ),
                   gender: _formkey.currentState?.value['gender'],
-                  activity: _formkey.currentState?.value['activity'])
+                  activity: _formkey.currentState?.value['activity']
+              )
           )
       );
     }
@@ -125,7 +129,7 @@ class Calculator extends StatelessWidget {
                             ),
                             onPressed: () => navigateToResult(context),
                             child: Text('Calculate',
-style: TextStyle(fontSize: 24)))),
+                              style: TextStyle(fontSize: 24)))),
 
                     /// The Reset Button
                     Expanded(
