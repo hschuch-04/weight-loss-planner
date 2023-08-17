@@ -19,8 +19,8 @@ class Sidebar extends StatelessWidget {
           ListTile(
             title: Text('Planner', style: TextStyle(fontWeight: FontWeight.bold)),
             onTap: () => {
-              if (ModalRoute.of(context)?.settings.name != '/planner') {
-                Navigator.of(context).pushNamedAndRemoveUntil('/planner', (Route<dynamic> route) => false)
+              if (ModalRoute.of(context)?.settings.name != '/loading') {
+                Navigator.of(context).pushNamedAndRemoveUntil('/loading', (Route<dynamic> route) => false)
               }
             }
           ),

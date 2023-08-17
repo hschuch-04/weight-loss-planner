@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weight_loss_planner/sidebar.dart';
+import 'package:weight_loss_planner/Reusable/sidebar.dart';
 
 // The About Class Page
 class About extends StatelessWidget {
@@ -15,6 +15,20 @@ class About extends StatelessWidget {
       ),
       drawer: Sidebar(),
       drawerEnableOpenDragGesture: false,
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: const [
+              Text(
+                'Calorie Calculator',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              Text("")
+            ]
+          ),
+        ),
+      ),
     );
   }
 }

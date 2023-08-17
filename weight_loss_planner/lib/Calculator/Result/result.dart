@@ -29,7 +29,6 @@ class Result extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Exercise Level: $activity',
@@ -40,6 +39,11 @@ class Result extends StatelessWidget {
             gender == 'Male'
                 ? CalorieTable(tabledata: bmr.malecalories())
                 : CalorieTable(tabledata: bmr.femalecalories()),
+            SizedBox(height: 10),
+            Text(
+              'Disclaimer: This is only an estimation of daily calorie intake and should be used as rough guide when used for weight loss.',
+              style: TextStyle(color: Colors.grey),
+              ),
           ],
         ),
       ),

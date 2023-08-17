@@ -1,23 +1,15 @@
-/// Sedentary (little or no exercise) = BMR x 1.2
-/// Lightly active (light exercise or sports 1-3 days a week) = BMR x 1.375
-/// Moderately active (moderate exercise or sports 3-5 days a week) = BMR x 1.465
-/// Active: daily exercise or intense exercise 3-4 times/week = BMR x 1.55
-/// Very active (hard exercise or sports 6-7 days a week) = BMR x 1.725
-/// Extra active (very hard exercise or sports, physical job or training twice a day) = BMR x 1.9
-/// 250 Calories deficit per 0.25kg
-///
-
 /// The class which gets the users information and calculates their BMR
 class BasalMetabolicRate {
-  late int weight;
-  late int height;
-  late int age;
-  late double activitymulti;
-  late double bmr;
+  late int weight; // Weight of the user
+  late int height; // Height of the user
+  late int age; // Age of the user
+  late double activitymulti; // The multiplier based on how much training
+  late double bmr; // The default BMR Value
 
   BasalMetabolicRate(this.weight, this.height, this.age, this.activitymulti);
 
-  // Calculates male BMR value
+  /// Calculates male BMR value
+  /// Uses Mifflin-St Jeor Equation
   List<Map> malecalories() {
     bmr = 10 * weight + 6.25 * height - 5 * age + 5;
     return [
@@ -37,7 +29,8 @@ class BasalMetabolicRate {
     ];
   }
 
-  // Calculates female BMR value
+  /// Calculates female BMR value
+  /// Mifflin-St Jeor Equation
   List<Map> femalecalories() {
     bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     return [
@@ -76,14 +69,6 @@ class ListInformation {
         return 1.9;
       default:
         return 1.2;
-    }
-  }
-
-  /// Gets the title for the Calculator Table based on their selection
-  static String activityName(String activity) {
-    switch (activity) {
-      default:
-        return '';
     }
   }
 
