@@ -1,18 +1,35 @@
 import 'dart:async';
 import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
 
 class Planner {
-  final String path;
   late Future<Database> db;
 
-  Planner({required this.path});
+  Planner();
 
-  /// Creates the database to be used
+  /// Creates or opens the database to be used to alter or view
   void createDatabase() async {
-    db = openDatabase(path, version: 1, onCreate: (db, version) {
-      return db.execute(
-        'CREATE TABLE days(id INT PRIMARY KEY, day STRING NOT NULL)'
-      );
-    });
+    db = openDatabase(
+      join(await getDatabasesPath(), 'planner.db'),
+      onCreate: (db, version) async {
+        await db.execute(
+            '''CREATE TABLE IF NOT EXISTS days(
+                id INT PRIMARY KEY, 
+                day STRING NOT NULL
+            )''');
+        await db.execute(
+          '''CREATE TABLE IF NOT EXISTS meals(
+              id INT PRIMARY KEY,
+              name STRING NOT NULL,
+              calories INT NOT NULL,
+              dayId INT NOT NULL,
+              FOREIGN KEY (dayId) REFERENCES days (id) ON DELETE CASCADE ON UPDATE CASCADE
+          )''');
+      },
+      onConfigure: (db) async {
+        await db.execute('PRAGMA foreign_keys = ON');
+      },
+      version: 1,
+    );
   }
 }
