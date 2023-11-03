@@ -1,4 +1,5 @@
 # The Manual Weight Loss Planner
+<img src="https://github.com/hschuch-04/weight-loss-planner/assets/46430331/25dab6ce-a348-4330-8d18-f0af9f5622c0" width="178" height="389" />
 
 ## Introduction
 The Manual Weight Loss planner is a mobile application which allows users to input their details and get an estimated calorie amount for the day (based on scientific formulas) depending on their weekly weight loss goals. 
