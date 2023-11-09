@@ -5,12 +5,14 @@ import 'package:weight_loss_planner/Calculator/calculator.dart';
 import 'package:weight_loss_planner/Planner/loading.dart';
 import 'package:weight_loss_planner/Reusable/sidebar.dart';
 
+/// The Main Function which initiates the application
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
   
+  // Creates the routes, and starts at '/'
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
@@ -29,7 +31,7 @@ class MainApp extends StatefulWidget {
   State<MainApp> createState() => _MainAppState();
 }
 
-// The Main App class
+/// The Main App Class Component
 class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
