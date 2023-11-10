@@ -10,9 +10,12 @@ It also has a graphing section where you can put input your weight for the day, 
 
 ## The Tech Stack
 ### Front End
-Flutter
+The Front End of the application is built using Flutter for multi-platform development, as I am a solo developer.
 
 ### Back End
-SQLite
+SQLite is the database I am using to store information for meals for each day of the week, as the storage requirements are small for this scale of project and don't require much strain on the phone itself. It also has an easy to install package SQFLITE which can be imported directly into the project and used.
 
 ## Development Experience
+I have learnt so much from this project such as page layout and navigation, package dependencies, file structure, re-usable components, etc. This project has helped me also identify keeping scope, as I want to develop more features such as user profiling, and graphing their weight-loss journey however since I'm still learning trying to keep it focused with just Meal Planning and the Calculator first before expanding on, but it's very exciting wanting to further improve the application.
+
+I've also been trying to update to GitHub when significant changes have occurred, such as Database Integration or a new feature has been implemented. 
