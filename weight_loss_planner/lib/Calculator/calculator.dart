@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:weight_loss_planner/Calculator/bmr.dart';
-import 'package:weight_loss_planner/Calculator/Result/result.dart';
+import 'package:weight_loss_planner/CALCULATOR/bmr.dart';
+import 'package:weight_loss_planner/CALCULATOR/Result/result.dart';
 import 'package:weight_loss_planner/Reusable/sidebar.dart';
 
 // The Calculator Class Page

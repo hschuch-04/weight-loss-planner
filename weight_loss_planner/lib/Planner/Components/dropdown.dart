@@ -12,14 +12,14 @@ const List<String> weekdays = <String>[
 ];
 
 /// The drop down box with all the days of the week
-class DropDownDays extends StatefulWidget {
-  const DropDownDays({super.key});
+class DropDownWeek extends StatefulWidget {
+  const DropDownWeek({super.key});
 
   @override
-  State<DropDownDays> createState() => _DropDownDaysState();
+  State<DropDownWeek> createState() => _DropDownWeekState();
 }
 
-class _DropDownDaysState extends State<DropDownDays> {
+class _DropDownWeekState extends State<DropDownWeek> {
   String dropdownValue = weekdays.first;
 
   @override

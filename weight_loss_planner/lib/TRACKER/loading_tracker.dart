@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:weight_loss_planner/Planner/SQL/database.dart';
-import 'package:weight_loss_planner/Planner/planner.dart';
 import 'package:weight_loss_planner/Reusable/sidebar.dart';
+import 'package:weight_loss_planner/SQL/database.dart';
+import 'package:weight_loss_planner/TRACKER/tracker.dart';
 
-/// The Loading Widget when trying to grab informaton
+/// The Loading Tracker Widget when trying to grab informaton
 /// This information is stored in a standard document folder
-class Loading extends StatefulWidget {
-  const Loading({super.key});
+class LoadingTracker extends StatefulWidget {
+  const LoadingTracker({super.key});
 
   @override
-  State<Loading> createState() => _LoadingState();
+  State<LoadingTracker> createState() => _LoadingTrackerState();
 }
 
-class _LoadingState extends State<Loading> {
-  
-  /// Creates the database if not initally setup 
-  /// and then navigates to the planner
-  void getPlannerData() async {
+class _LoadingTrackerState extends State<LoadingTracker> {
+  /// Loads the database connection and then navigates to the tracker
+  void loadDatabase() async {
     final db = await openConnection();
     if (mounted) {
       Navigator.pushReplacement(
           context,
           PageRouteBuilder(
-              pageBuilder: (context, animation, animation2) => Planner(db: db),
+              pageBuilder: (context, animation, animation2) => Tracker(db: db),
               transitionDuration: Duration.zero,
               reverseTransitionDuration: Duration.zero));
     }
@@ -32,7 +30,7 @@ class _LoadingState extends State<Loading> {
   @override
   void initState() {
     super.initState();
-    getPlannerData();
+    loadDatabase();
   }
 
   @override
@@ -40,7 +38,7 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text('Planner'),
+        title: Text('Tracker'),
         centerTitle: true,
       ),
       drawer: Sidebar(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:weight_loss_planner/Planner/Components/DropDown.dart';
+import 'package:weight_loss_planner/PLANNER/Components/dropdown.dart';
 import 'package:weight_loss_planner/Reusable/sidebar.dart';
 
 /// This page has all the information about meals and their contents
@@ -29,7 +29,7 @@ class _PlannerState extends State<Planner> {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            child: DropDownDays(),
+            child: DropDownWeek(),
           )
         ],
       )

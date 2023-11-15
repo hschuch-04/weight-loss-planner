@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weight_loss_planner/Calculator/Result/table.dart';
-import 'package:weight_loss_planner/Calculator/bmr.dart';
+import 'package:weight_loss_planner/CALCULATOR/Result/table.dart';
+import 'package:weight_loss_planner/CALCULATOR/bmr.dart';
 
 /// The result page from calculating user BMR and calorie deficit
 /// Needs a weight, height, age, gender and activity parsed

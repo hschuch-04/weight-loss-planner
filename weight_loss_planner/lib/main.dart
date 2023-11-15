@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:weight_loss_planner/About/about.dart';
-import 'package:weight_loss_planner/Calculator/calculator.dart';
-import 'package:weight_loss_planner/Planner/loading.dart';
+import 'package:weight_loss_planner/ABOUT/about.dart';
+import 'package:weight_loss_planner/CALCULATOR/calculator.dart';
+import 'package:weight_loss_planner/PLANNER/loading_planner.dart';
 import 'package:weight_loss_planner/Reusable/sidebar.dart';
+import 'package:weight_loss_planner/TRACKER/loading_tracker.dart';
 
 /// The Main Function which initiates the application
 void main() async {
@@ -17,7 +18,8 @@ void main() async {
     initialRoute: '/',
     routes: {
       '/': (context) => MainApp(), 
-      '/loading': (context) => Loading(),
+      '/planner': (context) => LoadingPlanner(),
+      '/tracker': (context) => LoadingTracker(),
       '/calculator': (context) => Calculator(),
       '/about': (context) => About()
     },

@@ -17,16 +17,16 @@ class Sidebar extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Planner', style: TextStyle(fontWeight: FontWeight.bold)),
-            onTap: () => {
-              if (ModalRoute.of(context)?.settings.name != '/loading') {
-                Navigator.of(context).pushNamedAndRemoveUntil('/loading', (Route<dynamic> route) => false)
-              }
-            }
-          ),
-          Divider(),
-          ListTile(
-            title: Text('Calculator', style: TextStyle(fontWeight: FontWeight.bold)),
+            title: RichText(text: TextSpan(
+              style: Theme.of(context).textTheme.titleMedium,
+              children: const [
+                WidgetSpan(child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Icon(Icons.calculate),
+                )),
+                TextSpan(text: 'Calculator')
+              ]
+              )),
             onTap: () => {
               if (ModalRoute.of(context)?.settings.name != '/calculator') {
                 Navigator.of(context).pushNamedAndRemoveUntil('/calculator', (Route<dynamic> route) => false)
@@ -35,7 +35,52 @@ class Sidebar extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            title: Text('About', style: TextStyle(fontWeight: FontWeight.bold)),
+            title: RichText(text: TextSpan(
+              style: Theme.of(context).textTheme.titleMedium,
+              children: const [
+                WidgetSpan(child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Icon(Icons.calendar_view_week),
+                )),
+                TextSpan(text: 'Planner')
+              ]
+              )),
+            onTap: () => {
+              if (ModalRoute.of(context)?.settings.name != '/planner') {
+                Navigator.of(context).pushNamedAndRemoveUntil('/planner', (Route<dynamic> route) => false)
+              }
+            }
+          ),
+          Divider(),
+          ListTile(
+            title: RichText(text: TextSpan(
+              style: Theme.of(context).textTheme.titleMedium,
+              children: const [
+                WidgetSpan(child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Icon(Icons.auto_graph),
+                )),
+                TextSpan(text: 'Tracker')
+              ]
+              )),
+            onTap: () => {
+              if (ModalRoute.of(context)?.settings.name != '/tracker') {
+                Navigator.of(context).pushNamedAndRemoveUntil('/tracker', (Route<dynamic> route) => false)
+              }
+            }
+          ),     
+          Divider(),
+          ListTile(
+            title: RichText(text: TextSpan(
+              style: Theme.of(context).textTheme.titleMedium,
+              children: const [
+                WidgetSpan(child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Icon(Icons.pageview),
+                )),
+                TextSpan(text: 'About')
+              ]
+              )),
             onTap: () => {
               if (ModalRoute.of(context)?.settings.name != '/about') {
                 Navigator.of(context).pushNamedAndRemoveUntil('/about', (Route<dynamic> route) => false)
