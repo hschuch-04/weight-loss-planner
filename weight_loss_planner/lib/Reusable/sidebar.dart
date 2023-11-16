@@ -12,7 +12,7 @@ class Sidebar extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(color: Colors.blue[900]),
             child: Text(
-              'Navigation',
+              ' Navigation',
               style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24),
             ),
           ),
