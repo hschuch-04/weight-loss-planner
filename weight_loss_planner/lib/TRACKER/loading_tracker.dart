@@ -37,14 +37,14 @@ class _LoadingTrackerState extends State<LoadingTracker> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Tracker'),
         centerTitle: true,
       ),
       drawer: Sidebar(),
       drawerEnableOpenDragGesture: false,
       body: Center(
-        child: SpinKitCircle(color: Colors.black, size: 80),
+        child: SpinKitCircle(color: Colors.white, size: 80),
       ),
     );
   }

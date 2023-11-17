@@ -37,7 +37,7 @@ class Calculator extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Calorie Calculator'),
         centerTitle: true,
       ),
@@ -52,7 +52,7 @@ class Calculator extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: Container(
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                decoration: BoxDecoration(border: Border.all()),
+                decoration: BoxDecoration(border: Border.all(color: Colors.white)),
                 child: Column(children: [
                   for (int i = 0; i < ListInformation.formname.length; i++) ...[
                     FormBuilderTextField(
@@ -118,7 +118,7 @@ class Calculator extends StatelessWidget {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               minimumSize: Size(0, 80),
-                              backgroundColor: Colors.green[600],
+                              backgroundColor: Colors.green[900],
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
@@ -136,7 +136,7 @@ class Calculator extends StatelessWidget {
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             minimumSize: Size(0, 80),
-                            backgroundColor: Colors.red,
+                            backgroundColor: Colors.red[900],
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(

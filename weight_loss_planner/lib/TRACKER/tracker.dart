@@ -12,16 +12,23 @@ class Tracker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      return Scaffold(
-      backgroundColor: Color.fromRGBO(30, 39, 38, 1),
+      //backgroundColor: Color.fromRGBO(30, 39, 38, 1),
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Weight Tracker'),
         centerTitle: true,
         shadowColor: Colors.transparent,
       ),
       drawer: Sidebar(),
       drawerEnableOpenDragGesture: false,
-      body: Chart(),
+      body: Column(
+        children: [
+          Chart(),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {}),
     );
   }
 }

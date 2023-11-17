@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:weight_loss_planner/Reusable/app_colors.dart';
-import 'package:weight_loss_planner/TRACKER/Components/date.dart';
+import 'package:weight_loss_planner/TRACKER/Functions/date.dart';
 
 final data = [
   FlSpot(datePoint(DateTime(2017, 3, 19)), 120),
@@ -86,8 +86,7 @@ class Chart extends StatelessWidget {
 
   /// The X-Axis Data and how it will be formatted
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
-    const style = TextStyle(
-      color: Color.fromARGB(255, 91, 99, 109), 
+    const style = TextStyle( 
       fontWeight: FontWeight.bold, 
       fontSize: 16
     );
@@ -143,8 +142,7 @@ class Chart extends StatelessWidget {
 
   /// The Y-Axis Data and how it will be formatted
   Widget leftTitleWidgets(double value, TitleMeta meta) {
-    const style = TextStyle(
-      color: Color.fromARGB(255, 91, 99, 109), 
+    const style = TextStyle( 
       fontWeight: FontWeight.bold, 
       fontSize: 15
     );

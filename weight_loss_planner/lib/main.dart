@@ -15,6 +15,11 @@ void main() async {
   
   // Creates the routes, and starts at '/'
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      brightness: Brightness.dark,
+      primaryColor: Colors.blueGrey
+    ),
     initialRoute: '/',
     routes: {
       '/': (context) => MainApp(), 
@@ -39,7 +44,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Weight Loss Planner'),
         centerTitle: true,
       ),

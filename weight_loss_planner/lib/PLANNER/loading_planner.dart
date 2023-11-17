@@ -39,7 +39,7 @@ class _LoadingPlannerState extends State<LoadingPlanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Planner'),
         centerTitle: true,
       ),

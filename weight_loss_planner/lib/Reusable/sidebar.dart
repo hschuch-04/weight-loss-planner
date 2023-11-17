@@ -10,10 +10,10 @@ class Sidebar extends StatelessWidget {
       child: NavigationDrawer(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue[900]),
+            decoration: BoxDecoration(color: Theme.of(context).primaryColor),
             child: Text(
               ' Navigation',
-              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
           ),
           ListTile(

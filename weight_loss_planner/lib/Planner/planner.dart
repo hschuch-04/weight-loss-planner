@@ -18,7 +18,7 @@ class _PlannerState extends State<Planner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Weekly Planner'),
         centerTitle: true,
         shadowColor: Colors.transparent,
